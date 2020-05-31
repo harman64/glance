@@ -3,10 +3,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Project Overview
 
-The project uploads a file from integration tab . The uploader accepts csv files.
-If a new file is uploaded the previous file is replaced with the new file.
-The uploaded file is present in uploads folder
-Reports tab displays the file in the form of a table
+The project uploads a file from integration tab . The uploader accepts csv files.<br/>
+If a new file is uploaded the previous file is replaced with the new file.<br/>
+The uploaded file is present in uploads folder.<br/>
+Reports tab displays the file in the form of a table.<br/>
 
 ## Available Scripts
 

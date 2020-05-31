@@ -1,0 +1,9 @@
+.searchDiv{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.searchBox{
+    padding:10px;
+}

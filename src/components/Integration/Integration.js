@@ -1,10 +1,11 @@
 import axios from "axios";
 import React, { Component } from "react";
 import Button from "react-bootstrap/Button";
-import { ToastContainer, toast } from "react-toastify";
+import { withRouter } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
-import "./Integration.css";
+import "./style.css";
 
 class Integration extends Component {
   constructor() {
@@ -31,12 +32,13 @@ class Integration extends Component {
     const data = new FormData();
     data.append("file", this.state.selectedFile);
     axios.post("http://localhost:3001/upload", data, {}).then((res) => {
-      console.log(res.statusText);
       toast("Uploaded Successfully!", {
         className: "success-toasty",
       });
       this.setState({
-        selectedFile: null
+        selectedFile: null,
+      },() => {
+        this.props.history.push("/report");
       });
     });
   };
@@ -59,15 +61,10 @@ class Integration extends Component {
             </Button>
           </form>
         </div>
-        <ToastContainer
-          autoClose={2000}
-          position="bottom-right"
-          className="toast-container"
-          toastClassName="dark-toast"
-        />
+       
       </div>
     );
   }
 }
 
-export default Integration;
+export default withRouter(Integration);

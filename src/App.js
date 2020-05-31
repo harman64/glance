@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
-import Integration from "./components/Integration/Integration";
-import Reporting from "./components/Reporting/Reporting";
-import Sidebar from "./components/Sidebar/Sidebar";
+import Integration from "./components/Integration";
+import Reporting from "./components/Reporting";
+import Sidebar from "./components/Sidebar";
 import "./App.css";
 
 class App extends Component {
@@ -19,6 +20,12 @@ class App extends Component {
               <Route exact path="/" component={Integration}></Route>
             </Switch>
           </div>
+          <ToastContainer
+          autoClose={2000}
+          position="bottom-right"
+          className="toast-container"
+          toastClassName="dark-toast"
+        />
         </div>
       </div>
     );

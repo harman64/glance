@@ -16,12 +16,12 @@
 
 .main-window {
   display: flex;
-  flex:1;
-  height: 100%;
+  height: 100vh;
 }
 
 .contentfull-display{
   padding: 50px;
+  flex:1;
 }
 
 @keyframes App-logo-spin {
