@@ -35,6 +35,9 @@ class Integration extends Component {
       toast("Uploaded Successfully!", {
         className: "success-toasty",
       });
+      this.setState({
+        selectedFile: null
+      });
     });
   };
 

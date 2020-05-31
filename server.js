@@ -5,12 +5,13 @@ var cors = require("cors");
 var multer = require("multer");
 var path = require("path");
 var fs = require("fs");
+var csv = require("csvtojson");
 
 app.use(cors());
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null,  path.join(__dirname, "/uploads"));
+    cb(null, path.join(__dirname, "/uploads"));
   },
   filename: function (req, file, cb) {
     cb(null, "data.csv");
@@ -31,16 +32,13 @@ app.post("/upload", function (req, res) {
 });
 
 app.get("/report", function (req, res) {
-  var filePath = path.join(__dirname, "/uploads/data.csv");
-  var stat = fs.statSync(filePath);
+  var csvFilePath = path.join(__dirname, "/uploads/data.csv");
 
-  res.writeHead(200, {
-    "Content-Type": "text/csv",
-    "Content-Length": stat.size,
-  });
-
-  var readStream = fs.createReadStream(filePath);
-  readStream.pipe(res);
+  csv()
+    .fromFile(csvFilePath)
+    .then((jsonObj) => {
+      res.send(jsonObj);
+    });
 });
 
 app.listen(3001, function () {
