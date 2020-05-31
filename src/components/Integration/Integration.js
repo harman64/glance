@@ -24,7 +24,7 @@ class Integration extends Component {
 
   onClickHandler = () => {
     if (this.state.selectedFile === null) {
-      toast("Please Upload File first", {
+      toast("Please Select File first", {
         className: "failiure-toasty",
       });
       return;
