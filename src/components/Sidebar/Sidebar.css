@@ -1,0 +1,17 @@
+.sidebar {
+  flex-basis: 300px;
+  background-color: gainsboro;
+}
+
+ul {
+  list-style: none;
+  text-align: left;
+}
+
+li{
+  padding: 5px;
+}
+
+a{
+  text-decoration: none;
+}

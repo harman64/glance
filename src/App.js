@@ -1,21 +1,23 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 
+import Integration from "./components/Integration/Integration";
+import Reporting from "./components/Reporting/Reporting";
+import Sidebar from "./components/Sidebar/Sidebar";
 import "./App.css";
 
 class App extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
     return (
       <div className="App">
-        <div>Hi Glance User</div>
+        <div className="Header">Hi Glance User</div>
         <div className="main-window">
-          <div>
+          <Sidebar />
+          <div className="contentfull-display">
             <Switch>
-              <Route path="/">Integration</Route>
+              <Route path="/" component={Integration}></Route>
+              <Route path="/reports">{Reporting}</Route>
             </Switch>
           </div>
         </div>

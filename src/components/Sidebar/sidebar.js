@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
-class Sidebar extends React.Component {
-  constructor() {
-    super();
-  }
+import "./Sidebar.css";
 
+class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
@@ -30,6 +28,5 @@ class Sidebar extends React.Component {
     );
   }
 }
-
 
 export default Sidebar;
