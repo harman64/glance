@@ -1,16 +1,19 @@
 var express = require("express");
 var app = express();
-var multer = require("multer");
+
 var cors = require("cors");
+var multer = require("multer");
+var path = require("path");
+var fs = require("fs");
 
 app.use(cors());
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, "public");
+    cb(null,  path.join(__dirname, "/uploads"));
   },
   filename: function (req, file, cb) {
-    cb(null, Date.now() + "-" + file.originalname);
+    cb(null, "data.csv");
   },
 });
 
@@ -25,6 +28,19 @@ app.post("/upload", function (req, res) {
     }
     return res.status(200).send(req.file);
   });
+});
+
+app.get("/report", function (req, res) {
+  var filePath = path.join(__dirname, "/uploads/data.csv");
+  var stat = fs.statSync(filePath);
+
+  res.writeHead(200, {
+    "Content-Type": "text/csv",
+    "Content-Length": stat.size,
+  });
+
+  var readStream = fs.createReadStream(filePath);
+  readStream.pipe(res);
 });
 
 app.listen(3001, function () {

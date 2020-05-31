@@ -7,7 +7,6 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import "./App.css";
 
 class App extends Component {
-
   render() {
     return (
       <div className="App">
@@ -16,8 +15,8 @@ class App extends Component {
           <Sidebar />
           <div className="contentfull-display">
             <Switch>
-              <Route path="/" component={Integration}></Route>
-              <Route path="/reports">{Reporting}</Route>
+              <Route path="/report" component={Reporting}></Route>
+              <Route exact path="/" component={Integration}></Route>
             </Switch>
           </div>
         </div>

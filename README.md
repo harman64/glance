@@ -1,5 +1,13 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+## Project Overview
+
+The project uploads a file from integration tab . The uploader accepts csv files.
+If a new file is uploaded the previous file is replaced with the new file.
+The uploaded file is present in uploads folder
+Reports tab displays the file in the form of a table
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -11,6 +19,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
+
+### nodemon server.js
+
+Runs the backend code at port 3001
 
 ### `npm test`
 

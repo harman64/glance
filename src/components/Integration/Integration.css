@@ -54,3 +54,13 @@
     font-weight: 400;
     font-size: medium;
 }
+
+
+.failiure-toasty{
+    background-color: #F8726E;
+    color:white;
+}
+.success-toasty{
+    background-color: forestgreen;
+    color: white;
+}
