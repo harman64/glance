@@ -1,7 +1,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-## Project Overview
+## GLANCE Assignment Overview
 
 The project uploads a file from integration tab. <br/>
 If a new file is uploaded the previous file is replaced with the new file.<br/>
@@ -20,9 +20,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### nodemon server.js
+### `nodemon server.js or node server.js`
 
-Runs the backend code at port 3001
+Runs the backend code at port http://localhost:3001. 
 
 ### `npm test`
 
